@@ -1,0 +1,8 @@
+<% if user_signed_in? %>
+  <h1>You are signed in</h1>
+  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-default btn-lg" %>
+<% else %>
+  <h1>You aren't signed in</h1>
+  <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+  <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+<% end %>
