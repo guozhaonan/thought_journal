@@ -12,20 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
+    <h2>What would you like to call this entry?</h2>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :body %><br>
+    <h2>How are you feeling? Write as much as you want (The more the better)</h2>
     <%= f.text_area :body %>
   </div>
   <div class="field">
-    <%= f.label :distress_level %><br>
+    <h2>On a scale between 1-10(Incredibly Distressed - Not Distressed At All) how distressed are you?</h2>
     <%= f.number_field :distress_level %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

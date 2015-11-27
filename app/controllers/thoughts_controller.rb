@@ -15,7 +15,7 @@ class ThoughtsController < ApplicationController
 
   # GET /thoughts/new
   def new
-    @thought = Thought.new
+    @thought = current_user.thoughts.build
   end
 
   # GET /thoughts/1/edit
@@ -25,7 +25,7 @@ class ThoughtsController < ApplicationController
   # POST /thoughts
   # POST /thoughts.json
   def create
-    @thought = Thought.new(thought_params)
+    @thought = current_user.thoughts.build(thought_params)
 
     respond_to do |format|
       if @thought.save
@@ -70,6 +70,6 @@ class ThoughtsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def thought_params
-      params.require(:thought).permit(:title, :body, :distress_level, :user_id)
+      params.require(:thought).permit(:title, :body, :distress_level)
     end
 end
